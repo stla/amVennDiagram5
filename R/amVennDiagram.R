@@ -6,19 +6,18 @@
 #'
 #' @export
 amVennDiagram <- function(message, width = NULL, height = NULL, elementId = NULL) {
-
   # forward options using x
-  x = list(
+  x <- list(
     data = message
   )
 
   # create widget
   htmlwidgets::createWidget(
-    name = 'amVennDiagram',
+    name = "amVennDiagram",
     x,
     width = width,
     height = height,
-    package = 'amVennDiagram5',
+    package = "amVennDiagram5",
     elementId = elementId
   )
 }
@@ -40,13 +39,15 @@ amVennDiagram <- function(message, width = NULL, height = NULL, elementId = NULL
 #' @name amVennDiagram-shiny
 #'
 #' @export
-amVennDiagramOutput <- function(outputId, width = '100%', height = '400px'){
-  htmlwidgets::shinyWidgetOutput(outputId, 'amVennDiagram', width, height, package = 'amVennDiagram5')
+amVennDiagramOutput <- function(outputId, width = "100%", height = "400px") {
+  htmlwidgets::shinyWidgetOutput(outputId, "amVennDiagram", width, height, package = "amVennDiagram5")
 }
 
 #' @rdname amVennDiagram-shiny
 #' @export
 renderAmVennDiagram <- function(expr, env = parent.frame(), quoted = FALSE) {
-  if (!quoted) { expr <- substitute(expr) } # force quoted
+  if (!quoted) {
+    expr <- substitute(expr)
+  } # force quoted
   htmlwidgets::shinyRenderWidget(expr, amVennDiagramOutput, env, quoted = TRUE)
 }

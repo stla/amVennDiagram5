@@ -3,6 +3,8 @@
 export(allVennDiagrams)
 export(amVennDiagram)
 export(amVennDiagramOutput)
+export(makeVennData)
 export(renderAmVennDiagram)
 import(htmlwidgets)
 importFrom(partitions,blockparts)
+importFrom(venn,extractInfo)
