@@ -6,4 +6,11 @@ dependencies:
     - index.js
     - venn.js
     - Animated.js
+    - Dark.js
+    - Dataviz.js
+    - Frozen.js
+    - Kelly.js
+    - Material.js
+    - Moonrise.js
+    - Spirited.js
     - exporting.js

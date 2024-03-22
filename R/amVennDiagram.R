@@ -2,17 +2,18 @@
 #'
 #' <Add Description>
 #'
-#' @import htmlwidgets
+#' @importFrom htmlwidgets createWidget
 #'
 #' @export
-amVennDiagram <- function(message, width = NULL, height = NULL, elementId = NULL) {
+amVennDiagram <- function(
+    data, width = NULL, height = NULL, elementId = NULL
+) {
   # forward options using x
   x <- list(
-    data = message
+    data = Filter(function(x) x[["count"]] >= 1L, data)
   )
-
   # create widget
-  htmlwidgets::createWidget(
+  createWidget(
     name = "amVennDiagram",
     x,
     width = width,
