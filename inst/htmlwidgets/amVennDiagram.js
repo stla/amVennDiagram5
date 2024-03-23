@@ -11,7 +11,31 @@ HTMLWidgets.widget({
         // Create root
         var root = am5.Root.new(el.id);
         // Set themes
-        root.setThemes([am5themes_Animated.new(root)]);
+        switch (x.theme) {
+          case "dark":
+            root.setThemes([am5themes_Animated.new(root), am5themes_Dark.new(root)]);
+            break;
+          case "dataviz":
+            root.setThemes([am5themes_Animated.new(root), am5themes_Dataviz.new(root)]);
+            break;
+          case "frozen":
+            root.setThemes([am5themes_Animated.new(root), am5themes_Frozen.new(root)]);
+            break;
+          case "kelly":
+            root.setThemes([am5themes_Animated.new(root), am5themes_Kelly.new(root)]);
+            break;
+          case "material":
+            root.setThemes([am5themes_Animated.new(root), am5themes_Material.new(root)]);
+            break;
+          case "moonrise":
+            root.setThemes([am5themes_Animated.new(root), am5themes_Moonrise.new(root)]);
+            break;
+          case "spirited":
+            root.setThemes([am5themes_Animated.new(root), am5themes_Spirited.new(root)]);
+            break;
+          default:
+            root.setThemes([am5themes_Animated.new(root)]);
+        }
         // Create wrapper container
         var container = root.container.children.push(
           am5.Container.new(root, {

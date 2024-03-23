@@ -4,7 +4,13 @@
 \alias{amVennDiagram}
 \title{<Add Title>}
 \usage{
-amVennDiagram(message, width = NULL, height = NULL, elementId = NULL)
+amVennDiagram(
+  data,
+  theme = "default",
+  width = NULL,
+  height = NULL,
+  elementId = NULL
+)
 }
 \description{
 <Add Description>

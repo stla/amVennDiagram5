@@ -6,11 +6,25 @@
 #'
 #' @export
 amVennDiagram <- function(
-    data, width = NULL, height = NULL, elementId = NULL
+    data, theme = "default", width = NULL, height = NULL, elementId = NULL
 ) {
+  theme <- match.arg(
+    theme,
+    c(
+      "default",
+      "dark",
+      "dataviz",
+      "frozen",
+      "kelly",
+      "material",
+      "moonrise",
+      "spirited"
+    )
+  )
   # forward options using x
   x <- list(
-    data = Filter(function(x) x[["count"]] >= 1L, data)
+    data  = Filter(function(x) x[["count"]] >= 1L, data),
+    theme = theme
   )
   # create widget
   createWidget(
