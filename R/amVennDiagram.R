@@ -86,7 +86,7 @@ amVennDiagramOutput <- function(outputId, width = "100%", height = "400px") {
 #' @rdname amVennDiagram-shiny
 #' @export
 renderAmVennDiagram <- function(expr, env = parent.frame(), quoted = FALSE) {
-  if (!quoted) {
+  if(!quoted) {
     expr <- substitute(expr)
   } # force quoted
   shinyRenderWidget(expr, amVennDiagramOutput, env, quoted = TRUE)

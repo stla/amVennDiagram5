@@ -21,7 +21,7 @@ makeVennData <- function(sets) {
       as.integer(row[nsets + 1L])
     )
   }))
-  ABsets <- LETTERS[seq_len(nsets)]
+  ABsets <- names(sets)
   do.call(c, lapply(seq_len(nsets), function(k) {
     combs <- combn(nsets, k)
     lapply(seq_len(ncol(combs)), function(j) {
