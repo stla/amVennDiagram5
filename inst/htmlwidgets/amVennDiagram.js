@@ -4,7 +4,6 @@ HTMLWidgets.widget({
   type: "output",
 
   factory: function (el, width, height) {
-    // TODO: define shared variables for this instance
 
     return {
       renderValue: function (x) {
@@ -13,29 +12,72 @@ HTMLWidgets.widget({
         // Set themes
         switch (x.theme) {
           case "dark":
-            root.setThemes([am5themes_Animated.new(root), am5themes_Dark.new(root)]);
+            root.setThemes([
+              am5themes_Animated.new(root),
+              am5themes_Dark.new(root)
+            ]);
             break;
           case "dataviz":
-            root.setThemes([am5themes_Animated.new(root), am5themes_Dataviz.new(root)]);
+            root.setThemes([
+              am5themes_Animated.new(root),
+              am5themes_Dataviz.new(root)
+            ]);
             break;
           case "frozen":
-            root.setThemes([am5themes_Animated.new(root), am5themes_Frozen.new(root)]);
+            root.setThemes([
+              am5themes_Animated.new(root),
+              am5themes_Frozen.new(root)
+            ]);
             break;
           case "kelly":
-            root.setThemes([am5themes_Animated.new(root), am5themes_Kelly.new(root)]);
+            root.setThemes([
+              am5themes_Animated.new(root),
+              am5themes_Kelly.new(root)
+            ]);
             break;
           case "material":
-            root.setThemes([am5themes_Animated.new(root), am5themes_Material.new(root)]);
+            root.setThemes([
+              am5themes_Animated.new(root),
+              am5themes_Material.new(root)
+            ]);
             break;
           case "moonrise":
-            root.setThemes([am5themes_Animated.new(root), am5themes_Moonrise.new(root)]);
+            root.setThemes([
+              am5themes_Animated.new(root),
+              am5themes_Moonrise.new(root)
+            ]);
             break;
           case "spirited":
-            root.setThemes([am5themes_Animated.new(root), am5themes_Spirited.new(root)]);
+            root.setThemes([
+              am5themes_Animated.new(root),
+              am5themes_Spirited.new(root)
+            ]);
             break;
           default:
             root.setThemes([am5themes_Animated.new(root)]);
         }
+        // exporting
+        var exporting = am5plugins_exporting.Exporting.new(root, {
+          menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+          htmlOptions: {
+            disabled: true
+          },
+          pdfOptions: {
+            disabled: true
+          },
+          pdfdataOptions: {
+            disabled: true
+          },
+          csvOptions: {
+            disabled: true
+          },
+          xlsxOptions: {
+            disabled: true
+          },
+          jsonOptions: {
+            disabled: true
+          }
+        });
         // Create wrapper container
         var container = root.container.children.push(
           am5.Container.new(root, {

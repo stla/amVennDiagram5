@@ -1,12 +1,23 @@
-#' <Add Title>
+#' Venn diagram widget
+#' @description Creates an \code{amVennDiagram} widget.
 #'
-#' <Add Description>
+#' @param data a list such as one returned by \code{\link{makeVennData}}
+#' @param theme the theme: \code{"default"}, \code{"dark"}, \code{"dataviz"},
+#'   \code{"frozen"}, \code{"kelly"}, \code{"material"}, \code{"moonrise"},
+#'   or \code{"spirited"}
+#' @param elementId a HTML id (usually useless)
+#'
+#' @returns An \code{amVennDiagram} widget.
 #'
 #' @importFrom htmlwidgets createWidget
 #'
 #' @export
+#' @examples
+#' sets <- list(A = 1:20, B = 10:30, C = 15:35)
+#' dat <- makeVennData(sets)
+#' amVennDiagram(dat, theme = "kelly")
 amVennDiagram <- function(
-    data, theme = "default", width = NULL, height = NULL, elementId = NULL
+    data, theme = "default", elementId = NULL
 ) {
   theme <- match.arg(
     theme,
@@ -30,8 +41,8 @@ amVennDiagram <- function(
   createWidget(
     name = "amVennDiagram",
     x,
-    width = width,
-    height = height,
+    width = NULL,
+    height = NULL,
     package = "amVennDiagram5",
     elementId = elementId
   )

@@ -2,16 +2,27 @@
 % Please edit documentation in R/amVennDiagram.R
 \name{amVennDiagram}
 \alias{amVennDiagram}
-\title{<Add Title>}
+\title{Venn diagram widget}
 \usage{
-amVennDiagram(
-  data,
-  theme = "default",
-  width = NULL,
-  height = NULL,
-  elementId = NULL
-)
+amVennDiagram(data, theme = "default", elementId = NULL)
+}
+\arguments{
+\item{data}{a list such as one returned by \code{\link{makeVennData}}}
+
+\item{theme}{the theme: \code{"default"}, \code{"dark"}, \code{"dataviz"},
+\code{"frozen"}, \code{"kelly"}, \code{"material"}, \code{"moonrise"},
+or \code{"spirited"}}
+
+\item{elementId}{a HTML id (usually useless)}
+}
+\value{
+An \code{amVennDiagram} widget.
 }
 \description{
-<Add Description>
+Creates an \code{amVennDiagram} widget.
+}
+\examples{
+sets <- list(A = 1:20, B = 10:30, C = 15:35)
+dat <- makeVennData(sets)
+amVennDiagram(dat, theme = "kelly")
 }
