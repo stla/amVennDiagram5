@@ -5,6 +5,7 @@
 #' @param theme the theme: \code{"default"}, \code{"dark"}, \code{"dataviz"},
 #'   \code{"frozen"}, \code{"kelly"}, \code{"material"}, \code{"moonrise"},
 #'   or \code{"spirited"}
+#' @param title chart title
 #' @param elementId a HTML id (usually useless)
 #'
 #' @returns An \code{amVennDiagram} widget.
@@ -17,7 +18,7 @@
 #' dat <- makeVennData(sets)
 #' amVennDiagram(dat, theme = "kelly")
 amVennDiagram <- function(
-    data, theme = "default", elementId = NULL
+    data, theme = "default", title = "", elementId = NULL
 ) {
   theme <- match.arg(
     theme,
@@ -35,7 +36,8 @@ amVennDiagram <- function(
   # forward options using x
   x <- list(
     data  = Filter(function(x) x[["count"]] >= 1L, data),
-    theme = theme
+    theme = theme,
+    title = title
   )
   # create widget
   createWidget(

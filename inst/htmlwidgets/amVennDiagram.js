@@ -4,7 +4,6 @@ HTMLWidgets.widget({
   type: "output",
 
   factory: function (el, width, height) {
-
     return {
       renderValue: function (x) {
         // Create root
@@ -100,8 +99,23 @@ HTMLWidgets.widget({
         );
         // Set data
         chart.data.setAll(x.data);
+        // Set title
+        var title = container.children.push(
+          am5.Label.new(root, {
+            text: x.title,
+            fontSize: 20,
+            x: am5.percent(50),
+            centerX: am5.percent(50)
+          })
+        );
+        // Labels
+        chart.labels.template.setAll({
+          fontSize: 20,
+          fill: am5.color(0x000000),
+          text: "[bold]{category}[/]"
+        });
         // Set tooltip content
-        chart.slices.template.set("tooltipText", "{category}: {value}");
+        chart.slices.template.set("tooltipText", "[bold]{value}[/]");
         // Set up hover appearance
         chart.hoverGraphics.setAll({
           strokeDasharray: [3, 3],

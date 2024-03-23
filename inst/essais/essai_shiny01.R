@@ -23,7 +23,9 @@ server <- function(input, output, session) {
   output[["diagram"]] <- renderAmVennDiagram({
     i <- as.integer(input[["index"]])
     print(i)
-    amVennDiagram(diagrams[[i]])
+    amVennDiagram(
+      diagrams[[i]], theme = "material", title = "Venn diagram"
+    )
   })
 
 }
