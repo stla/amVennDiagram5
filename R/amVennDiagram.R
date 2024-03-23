@@ -48,25 +48,33 @@ amVennDiagram <- function(
   )
 }
 
-#' Shiny bindings for amVennDiagram
-#'
-#' Output and render functions for using amVennDiagram within Shiny
-#' applications and interactive Rmd documents.
+#' Shiny bindings for 'amVennDiagram'
+#' @description Output and render functions for using \code{amVennDiagram}
+#'   within Shiny applications and interactive Rmd documents.
 #'
 #' @param outputId output variable to read from
-#' @param width,height Must be a valid CSS unit (like \code{'100\%'},
-#'   \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
-#'   string and have \code{'px'} appended.
-#' @param expr An expression that generates a amVennDiagram
-#' @param env The environment in which to evaluate \code{expr}.
-#' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
-#'   is useful if you want to save an expression in a variable.
+#' @param width,height a valid CSS dimension (like \code{"100\%"},
+#'   \code{"400px"}, \code{"auto"}) or a number, which will be coerced to a
+#'   string and have \code{"px"} appended
+#' @param expr an expression that generates an \code{\link{amVennDiagram}}
+#' @param env the environment in which to evaluate \code{expr}
+#' @param quoted logical, whether \code{expr} is a quoted expression
+#'   (with \code{quote()}); this is useful if you want to save an expression
+#'   in a variable
+#'
+#' @returns \code{amVennDiagramOutput} returns an output element that can be
+#'   included in a Shiny UI definition, and \code{renderAmVennDiagram} returns a
+#'   \code{shiny.render.function} object that can be included in a Shiny server
+#'   definition.
 #'
 #' @name amVennDiagram-shiny
 #'
 #' @export
+#' @importFrom htmlwidgets shinyWidgetOutput shinyRenderWidget
 amVennDiagramOutput <- function(outputId, width = "100%", height = "400px") {
-  htmlwidgets::shinyWidgetOutput(outputId, "amVennDiagram", width, height, package = "amVennDiagram5")
+  shinyWidgetOutput(
+    outputId, "amVennDiagram", width, height, package = "amVennDiagram5"
+  )
 }
 
 #' @rdname amVennDiagram-shiny
@@ -75,5 +83,5 @@ renderAmVennDiagram <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) {
     expr <- substitute(expr)
   } # force quoted
-  htmlwidgets::shinyRenderWidget(expr, amVennDiagramOutput, env, quoted = TRUE)
+  shinyRenderWidget(expr, amVennDiagramOutput, env, quoted = TRUE)
 }
