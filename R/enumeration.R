@@ -55,20 +55,23 @@ allVennDiagrams <- function(cardinalities, output = "dataframes") {
   ABsets <- LETTERS[seq_len(nsets)]
   .diagrams <- enumerateVennDiagrams(cardinalities)
   diagrams <- lapply(.diagrams, function(diagram) {
-    data <- vector("list", length = length(diagram))
-    for(i in seq_along(diagram)) {
-      venn <- diagram[[i]]
-      sets <- ABsets[venn[[1L]]]
-      set <- paste0(sets, collapse = ":")
-      data[[i]] <- list(
-        "name"  = set,
-        "count" = venn[[2L]]
-      )
-      if(length(sets) >= 2L) {
-        data[[i]][["sets"]] <- sets
-      }
-    }
-    data
+    do.call(c, lapply(seq_len(nsets), function(k) {
+      combs <- combn(nsets, k)
+      lapply(seq_len(ncol(combs)), function(j) {
+        comb <- combs[, j]
+        sets <- ABsets[comb]
+        ok <- Filter(function(x) all(x[[1L]][comb]), diagram)
+        count <- sum(vapply(ok, `[[`, integer(1L), 2L))
+        out <- list(
+          "name"  = paste0(sets, collapse = ":"),
+          "count" = count
+        )
+        if(length(sets) >= 2L) {
+          out[["sets"]] <- sets
+        }
+        out
+      })
+    }))
   })
   if(output == "dataframes") {
     lapply(diagrams, function(diagram) {
@@ -81,23 +84,3 @@ allVennDiagrams <- function(cardinalities, output = "dataframes") {
     diagrams
   }
 }
-
-.diagrams <- enumerateVennDiagrams(c(2, 2, 1))
-diagram <- .diagrams[[4]]
-
-k <- 1
-combs <- combn(3, k)
-j <- 2
-comb <- combs[, j]
-sets <- LETTERS[1:3][comb]
-ok <- Filter(function(x) all(x[[1L]][comb]), diagram)
-count <- sum(vapply(ok, `[[`, integer(1L), 2L))
-
-out <- list(
-  "set" = paste0(sets, collapse = ":"),
-  "count" = count
-)
-if(length(sets) >= 2L) {
-  out[["sets"]] <- sets
-}
-
