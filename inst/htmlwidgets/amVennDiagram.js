@@ -85,6 +85,15 @@ HTMLWidgets.widget({
             layout: root.horizontalLayout
           })
         );
+        // Set title
+        var title = container.children.push(
+          am5.Label.new(root, {
+            text: x.title,
+            fontSize: 20,
+            x: am5.percent(50),
+            centerX: am5.percent(50)
+          })
+        );
         // Create venn series
         var chart = container.children.push(
           am5venn.Venn.new(root, {
@@ -99,15 +108,6 @@ HTMLWidgets.widget({
         );
         // Set data
         chart.data.setAll(x.data);
-        // Set title
-        var title = container.children.push(
-          am5.Label.new(root, {
-            text: x.title,
-            fontSize: 20,
-            x: am5.percent(50),
-            centerX: am5.percent(50)
-          })
-        );
         // Labels
         chart.labels.template.setAll({
           fontSize: 20,

@@ -2,4 +2,4 @@
 
 ___
 
-![](https://raw.githubusercontent.com/stla/amVennDiagram5/main/inst/gifs/amVennDiagram.gif)
+![](https://raw.githubusercontent.com/stla/amVennDiagram5/main/inst/gif/amVennDiagram.gif)
