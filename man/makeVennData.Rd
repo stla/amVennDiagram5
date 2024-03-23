@@ -18,5 +18,5 @@ Make data for usage in \code{\link{amVennDiagram}}.
 \examples{
 sets <- list(A = 1:20, B = 10:30, C = 15:35)
 dat <- makeVennData(sets)
-amVennDiagram(dat)
+amVennDiagram(dat, theme = "spirited")
 }
