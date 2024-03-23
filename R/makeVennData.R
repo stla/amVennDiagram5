@@ -11,7 +11,7 @@
 #' @examples
 #' sets <- list(A = 1:20, B = 10:30, C = 15:35)
 #' dat <- makeVennData(sets)
-#' amVennDiagram(dat)
+#' amVennDiagram(dat, theme = "spirited")
 makeVennData <- function(sets) {
   info <- extractInfo(sets, use.names = FALSE)[-1L, ]
   nsets <- length(sets)

@@ -9,7 +9,8 @@ ui <- fluidPage(
       radioButtons(
         "index",
         "Diagram",
-        choices = 1:9
+        choices = 1:9,
+        selected = 4
       )
     ),
     mainPanel(

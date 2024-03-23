@@ -82,7 +82,7 @@ HTMLWidgets.widget({
           am5.Container.new(root, {
             width: am5.p100,
             height: am5.p100,
-            layout: root.verticalLayout
+            layout: root.horizontalLayout
           })
         );
         // Create venn series
@@ -115,7 +115,16 @@ HTMLWidgets.widget({
           text: "[bold]{category}[/]"
         });
         // Set tooltip content
-        chart.slices.template.set("tooltipText", "[bold]{value}[/]");
+        chart.slices.template.set(
+          "tooltipText",
+          "[bold]{category}[/] [bold underline fontStyle: italic]{value}[/]"
+        );
+        // Set slices settings
+        chart.slices.template.setAll({
+          fillOpacity: 0.5,
+          stroke: am5.color(0x000000),
+          strokeWidth: 2
+        });
         // Set up hover appearance
         chart.hoverGraphics.setAll({
           strokeDasharray: [3, 3],
@@ -125,8 +134,11 @@ HTMLWidgets.widget({
         // Add legend
         var legend = container.children.push(
           am5.Legend.new(root, {
-            centerX: am5.p50,
-            x: am5.p50
+            layout: root.verticalLayout,
+            centerX: am5.p100,
+            x: am5.p100,
+            centerY: am5.p50,
+            y: am5.p50
           })
         );
         legend.data.setAll(chart.dataItems);
