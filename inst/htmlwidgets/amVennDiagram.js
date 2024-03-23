@@ -151,6 +151,8 @@ HTMLWidgets.widget({
           })
         );
         legend.data.setAll(chart.dataItems);
+
+        chart.appear(1000, 100);
       },
 
       resize: function (width, height) {
