@@ -4,10 +4,19 @@ HTMLWidgets.widget({
   type: "output",
 
   factory: function (el, width, height) {
+    var inShiny = HTMLWidgets.shinyMode;
+
     return {
       renderValue: function (x) {
+        am5.array.each(am5.registry.rootElements, function (root) {
+          if (root.dom.id == el.id) {
+            root.dispose();
+          }
+        });
+
         // Create root
         var root = am5.Root.new(el.id);
+
         // Set themes
         switch (x.theme) {
           case "dark":

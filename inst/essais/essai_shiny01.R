@@ -22,6 +22,8 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
   output[["diagram"]] <- renderAmVennDiagram({
+    # sess <- getDefaultReactiveDomain()
+    # sess$sendCustomMessage("diagram_destroy", TRUE)
     i <- as.integer(input[["index"]])
     print(i)
     amVennDiagram(

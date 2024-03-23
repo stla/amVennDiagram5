@@ -12,7 +12,6 @@ Imports:
     partitions,
     venn,
     utils
-Suggests: 
-    shiny
+Suggests: shiny
 Encoding: UTF-8
 RoxygenNote: 7.3.1
