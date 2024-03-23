@@ -49,6 +49,7 @@ enumerateVennDiagrams <- function(dims) {
 #'
 #' @returns List of Venn diagrams.
 #' @export
+#' @importFrom utils combn
 allVennDiagrams <- function(cardinalities, output = "dataframes") {
   output <- match.arg(output, c("dataframes", "lists"))
   nsets <- length(cardinalities)

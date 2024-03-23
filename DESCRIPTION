@@ -10,7 +10,8 @@ BugReports: https://github.com/stla/amVennDiagram5/issues
 Imports: 
     htmlwidgets,
     partitions,
-    venn
+    venn,
+    utils
 Suggests: 
     shiny
 Encoding: UTF-8
