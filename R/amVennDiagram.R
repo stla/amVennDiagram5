@@ -33,9 +33,13 @@ amVennDiagram <- function(
       "spirited"
     )
   )
+  # filter and sort data
+  data   <- Filter(function(x) x[["count"]] >= 1L, data)
+  counts <- sapply(data, `[[`, "count")
+  data   <- data[order(counts)]
   # forward options using x
   x <- list(
-    data  = Filter(function(x) x[["count"]] >= 1L, data),
+    data  = data,
     theme = theme,
     title = title
   )
