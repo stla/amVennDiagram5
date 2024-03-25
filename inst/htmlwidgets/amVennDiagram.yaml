@@ -1,6 +1,6 @@
 dependencies:
  - name: amcharts5-venn
-   version: 5.8.6
+   version: 5.8.7
    src: htmlwidgets/lib/amCharts5
    script:
     - index.js
