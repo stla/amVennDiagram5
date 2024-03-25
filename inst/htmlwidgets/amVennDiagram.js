@@ -91,10 +91,11 @@ HTMLWidgets.widget({
           am5.Container.new(root, {
             width: am5.p100,
             height: am5.p100,
-            layout: root.horizontalLayout
+            layout:
+              x.legend === "right" ? root.horizontalLayout : root.verticalLayout
           })
         );
-        // Set title
+        /*        // Set title
         var title = container.children.push(
           am5.Label.new(root, {
             text: x.title,
@@ -102,7 +103,7 @@ HTMLWidgets.widget({
             x: am5.percent(50),
             centerX: am5.percent(50)
           })
-        );
+        ); */
         // Create venn series
         var chart = container.children.push(
           am5venn.Venn.new(root, {
@@ -143,11 +144,12 @@ HTMLWidgets.widget({
         // Add legend
         var legend = container.children.push(
           am5.Legend.new(root, {
-            layout: root.verticalLayout,
-            centerX: am5.p100,
-            x: am5.p100,
-            centerY: am5.p50,
-            y: am5.p50
+            layout:
+              x.legend === "right" ? root.verticalLayout : root.gridLayout,
+            centerX: x.legend === "right" ? am5.p100 : am5.p50,
+            x: x.legend === "right" ? am5.p100 : am5.p50,
+            centerY: x.legend === "right" ? am5.p50 : am5.p100,
+            y: x.legend === "right" ? am5.p50 : am5.p100
           })
         );
         legend.data.setAll(chart.dataItems);

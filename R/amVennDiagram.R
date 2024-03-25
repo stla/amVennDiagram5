@@ -5,7 +5,7 @@
 #' @param theme the theme: \code{"default"}, \code{"dark"}, \code{"dataviz"},
 #'   \code{"frozen"}, \code{"kelly"}, \code{"material"}, \code{"moonrise"},
 #'   or \code{"spirited"}
-#' @param title chart title
+#' @param legendPosition legend position: \code{"right"} or \code{"bottom"}
 #' @param elementId a HTML id (usually useless)
 #'
 #' @returns An \code{amVennDiagram} widget.
@@ -18,7 +18,7 @@
 #' dat <- makeVennData(sets)
 #' amVennDiagram(dat, theme = "kelly")
 amVennDiagram <- function(
-    data, theme = "default", title = "", elementId = NULL
+    data, theme = "default", legendPosition = "right", elementId = NULL
 ) {
   theme <- match.arg(
     theme,
@@ -33,15 +33,16 @@ amVennDiagram <- function(
       "spirited"
     )
   )
+  legendPosition <- match.arg(legendPosition, c("bottom", "right"))
   # filter and sort data
   data   <- Filter(function(x) x[["count"]] >= 1L, data)
   counts <- sapply(data, `[[`, "count")
   data   <- data[order(counts, decreasing = TRUE)]
   # forward options using x
   x <- list(
-    data  = data,
-    theme = theme,
-    title = title
+    data   = data,
+    theme  = theme,
+    legend = legendPosition
   )
   # create widget
   createWidget(
