@@ -27,7 +27,7 @@ server <- function(input, output, session) {
     i <- as.integer(input[["index"]])
     print(i)
     amVennDiagram(
-      diagrams[[i]], theme = "material", title = "Venn diagram"
+      diagrams[[i]], theme = "material"
     )
   })
 

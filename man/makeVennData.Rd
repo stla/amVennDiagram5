@@ -7,10 +7,10 @@
 makeVennData(sets)
 }
 \arguments{
-\item{sets}{a named list of vectors}
+\item{sets}{a named list of vectors representing some sets}
 }
 \value{
-A list suitable for \code{\link{amVennDiagram}}.
+A list suitable for usage in \code{\link{amVennDiagram}}.
 }
 \description{
 Make data for usage in \code{\link{amVennDiagram}}.

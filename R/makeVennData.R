@@ -1,9 +1,9 @@
 #' Venn diagram data from a list of sets
 #' @description Make data for usage in \code{\link{amVennDiagram}}.
 #'
-#' @param sets a named list of vectors
+#' @param sets a named list of vectors representing some sets
 #'
-#' @return A list suitable for \code{\link{amVennDiagram}}.
+#' @return A list suitable for usage in \code{\link{amVennDiagram}}.
 #' @export
 #' @importFrom venn extractInfo
 #' @importFrom utils combn

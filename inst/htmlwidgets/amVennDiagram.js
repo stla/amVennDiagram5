@@ -153,6 +153,12 @@ HTMLWidgets.widget({
           })
         );
         legend.data.setAll(chart.dataItems);
+        legend.labels.template.setAll({
+          fill: am5.color(0x000000)
+        });
+        legend.valueLabels.template.setAll({
+          fill: am5.color(0x000000)
+        });
 
         chart.appear(1000, 100);
       },

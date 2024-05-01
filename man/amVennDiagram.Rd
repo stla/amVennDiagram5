@@ -4,7 +4,12 @@
 \alias{amVennDiagram}
 \title{Venn diagram widget}
 \usage{
-amVennDiagram(data, theme = "default", title = "", elementId = NULL)
+amVennDiagram(
+  data,
+  theme = "default",
+  legendPosition = "right",
+  elementId = NULL
+)
 }
 \arguments{
 \item{data}{a list such as one returned by \code{\link{makeVennData}}}
@@ -13,7 +18,7 @@ amVennDiagram(data, theme = "default", title = "", elementId = NULL)
 \code{"frozen"}, \code{"kelly"}, \code{"material"}, \code{"moonrise"},
 or \code{"spirited"}}
 
-\item{title}{chart title}
+\item{legendPosition}{legend position: \code{"right"} or \code{"bottom"}}
 
 \item{elementId}{a HTML id (usually useless)}
 }
