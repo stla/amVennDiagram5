@@ -1,0 +1,308 @@
+[
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 0,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 0,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 0,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 0,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 0,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 1,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 0,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 0,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 1,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 0,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 0,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 0,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 1,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 1,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 0,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 0,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 2,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 0,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 0,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 0,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 0,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 0,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 1,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 0,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 1,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 1,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 1,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 1,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 1,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 0,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 1,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 0,
+      "sets": ["A", "B", "C"]
+    }
+  ],
+  [
+    {
+      "name": "A",
+      "count": 2
+    },
+    {
+      "name": "B",
+      "count": 2
+    },
+    {
+      "name": "C",
+      "count": 1
+    },
+    {
+      "name": "A:B",
+      "count": 2,
+      "sets": ["A", "B"]
+    },
+    {
+      "name": "A:C",
+      "count": 1,
+      "sets": ["A", "C"]
+    },
+    {
+      "name": "B:C",
+      "count": 1,
+      "sets": ["B", "C"]
+    },
+    {
+      "name": "A:B:C",
+      "count": 1,
+      "sets": ["A", "B", "C"]
+    }
+  ]
+]
