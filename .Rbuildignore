@@ -1,3 +1,5 @@
 ^amVennDiagram5\.Rproj$
 ^\.Rproj\.user$
 ^inst/essais$
+^inst/trash$
+^cran-comments\.md$

@@ -40,9 +40,9 @@ amVennDiagram <- function(
   data   <- data[order(counts, decreasing = TRUE)]
   # forward options using x
   x <- list(
-    data   = data,
-    theme  = theme,
-    legend = legendPosition
+    "data"   = data,
+    "theme"  = theme,
+    "legend" = legendPosition
   )
   # create widget
   createWidget(
